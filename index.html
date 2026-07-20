@@ -1,26 +1,92 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="dark">
 <head>
-  <link rel="icon" type="image/png" href="img/favicon.png">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Yash Patel </title>
-<meta name="description" content="Yash Patel — Software Developer, QA Analyst, and Web Expert based in Toronto, ON.">
+
+<title>Yash Patel — Software Engineer &amp; QA Automation | Toronto</title>
+<meta name="description" content="Yash Patel — Software Engineer and QA Automation Analyst based in Toronto, Canada. Building reliable systems at Fidelity Investments. See projects, experience, and certifications.">
+<meta name="author" content="Yash Patel">
+<link rel="canonical" href="https://yashpatel-tech.netlify.app/">
+
+<!-- Apply the saved theme before first paint, so returning visitors don't see a flash of the wrong theme. -->
+<script>
+  (function () {
+    try {
+      var saved = localStorage.getItem('yp-theme');
+      if (saved === 'light' || saved === 'dark') {
+        document.documentElement.setAttribute('data-theme', saved);
+      }
+    } catch (e) { /* private mode / storage disabled — keep the default theme */ }
+  })();
+</script>
+
+<!-- Icons -->
+<link rel="icon" type="image/png" href="img/favicon.png">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<meta name="theme-color" content="#0d0d0d" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#f8f6f1" media="(prefers-color-scheme: light)">
+
+<!-- Open Graph / Twitter -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Yash Patel">
+<meta property="og:title" content="Yash Patel — Software Engineer &amp; QA Automation">
+<meta property="og:description" content="Software Engineer and QA Automation Analyst based in Toronto, Canada. Building reliable systems at Fidelity Investments.">
+<meta property="og:url" content="https://yashpatel-tech.netlify.app/">
+<meta property="og:image" content="https://yashpatel-tech.netlify.app/img/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Yash Patel">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@yashpatel458">
+<meta name="twitter:creator" content="@yashpatel458">
+<meta name="twitter:title" content="Yash Patel — Software Engineer &amp; QA Automation">
+<meta name="twitter:description" content="Software Engineer and QA Automation Analyst based in Toronto, Canada. Building reliable systems at Fidelity Investments.">
+<meta name="twitter:image" content="https://yashpatel-tech.netlify.app/img/og-image.jpg">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Yash Patel",
+  "url": "https://yashpatel-tech.netlify.app/",
+  "image": "https://yashpatel-tech.netlify.app/img/og-image.jpg",
+  "jobTitle": "Software Engineer & QA Automation Analyst",
+  "email": "mailto:yashpatel.sde@gmail.com",
+  "address": { "@type": "PostalAddress", "addressLocality": "Toronto", "addressRegion": "ON", "addressCountry": "CA" },
+  "worksFor": { "@type": "Organization", "name": "Fidelity Investments Canada" },
+  "alumniOf": [
+    { "@type": "CollegeOrUniversity", "name": "University of Windsor" },
+    { "@type": "CollegeOrUniversity", "name": "Charotar University of Science and Technology" }
+  ],
+  "sameAs": [
+    "https://github.com/yashpatel458",
+    "https://www.linkedin.com/in/yashpatel458/",
+    "https://twitter.com/yashpatel458"
+  ]
+}
+</script>
+<script type="module" src="https://unpkg.com/@splinetool/viewer@1.12.98/build/spline-viewer.js"></script>
 <style>
   [data-theme="dark"] {
+    color-scheme: dark;
     --bg: #0d0d0d; --bg2: #141414; --bg3: #1a1a1a; --surface: #1f1f1f;
     --border: rgba(255,255,255,0.08); --border2: rgba(255,255,255,0.18);
     --text: #f0ede6; --muted: #888580; --accent: #c8b88a; --accent2: #8ab4c8; --green: #7ec89a;
     --nav-bg: rgba(13,13,13,0.88); --tag-hover: rgba(200,184,138,0.06);
+    --accent-glow: rgba(200,184,138,0.09); --accent-dot: rgba(200,184,138,0.08);
   }
   [data-theme="light"] {
+    color-scheme: light;
     --bg: #f8f6f1; --bg2: #f0ede6; --bg3: #e8e4db; --surface: #ffffff;
     --border: rgba(0,0,0,0.08); --border2: rgba(0,0,0,0.18);
     --text: #1a1814; --muted: #7a7570; --accent: #8a6e3a; --accent2: #2a6a8a; --green: #2a7a48;
     --nav-bg: rgba(248,246,241,0.92); --tag-hover: rgba(138,110,58,0.07);
+    --accent-glow: rgba(138,110,58,0.10); --accent-dot: rgba(138,110,58,0.10);
   }
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; }
@@ -33,13 +99,43 @@
   }
   a { color: inherit; text-decoration: none; }
 
-  .about-photo-wrap:hover .about-photo {
-  transform: scale(1.05);
-  transition: transform 0.4s cubic-bezier(.4,2,.3,1);
-}
-  .about-photo {
-  transition: transform 0.4s cubic-bezier(.4,2,.3,1);
-}
+  /* Keyboard focus — every interactive element has a :hover, so it needs this too. */
+  :focus-visible {
+    outline: 2px solid var(--accent2);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  /* Skip link: first tab stop, since the fixed nav puts 5+ links before the content. */
+  .skip-link {
+    position: absolute; top: 0; left: 0; z-index: 200;
+    padding: 0.75rem 1.25rem;
+    background: var(--accent); color: var(--bg);
+    font-family: 'DM Mono', monospace; font-size: 0.75rem;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    transform: translateY(-120%);
+    transition: transform 0.2s;
+  }
+  .skip-link:focus { transform: translateY(0); }
+
+  .visually-hidden {
+    position: absolute; width: 1px; height: 1px;
+    margin: -1px; padding: 0; overflow: hidden;
+    clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+    html { scroll-behavior: auto; }
+  }
+
+  .about-photo { transition: transform 0.4s cubic-bezier(.4,2,.3,1); }
+  .about-photo-wrap:hover .about-photo { transform: scale(1.05); }
 
   /* NAV */
   nav {
@@ -77,35 +173,30 @@
   .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; }
   .hamburger span { display: block; width: 22px; height: 1.5px; background: var(--text); }
 
-  /* HERO */
+  /* HERO — Splite Split Layout */
   #hero {
-    min-height: 100vh; display: flex; align-items: center;
-    padding: 0 4rem; position: relative; overflow: hidden;
-    background: linear-gradient(135deg, var(--bg) 0%, var(--bg2) 50%, var(--bg) 100%);
-    background-size: 400% 400%;
-    animation: gradientFlow 8s ease infinite;
+    min-height: 100vh; min-height: 100dvh; display: flex; align-items: stretch;
+    padding: 0; position: relative; overflow: hidden;
+    background: var(--bg);
   }
-  @keyframes gradientFlow {
-    0%, 100% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
+  .hero-spotlight {
+    position: absolute; inset: 0; z-index: 0; pointer-events: none;
+    background: radial-gradient(ellipse 700px 500px at 25% 50%, var(--accent-glow) 0%, transparent 70%);
   }
-  #hero::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background-image: 
-      radial-gradient(circle at 20% 50%, rgba(200, 184, 138, 0.06) 0%, transparent 50%),
-      radial-gradient(circle at 80% 80%, rgba(138, 180, 200, 0.04) 0%, transparent 50%);
-    animation: glowPulse 6s ease-in-out infinite;
-    pointer-events: none;
-    z-index: 0;
+  .hero-divider {
+    position: absolute; left: 50%; top: 8%; height: 84%; width: 1px;
+    background: linear-gradient(to bottom, transparent, var(--border2) 30%, var(--border2) 70%, transparent);
+    z-index: 2; pointer-events: none;
   }
-  @keyframes glowPulse {
-    0%, 100% { opacity: 0.5; }
-    50% { opacity: 1; }
+  .hero-left {
+    flex: 0 0 50%; display: flex; flex-direction: column;
+    justify-content: center; padding: 8rem 4rem 4rem;
+    position: relative; z-index: 1;
   }
-  #three-canvas { display: none; }
-  .hero-content { position: relative; z-index: 1; max-width: 780px; }
+  .hero-right {
+    flex: 0 0 50%; position: relative; overflow: hidden; background: var(--bg);
+  }
+  .hero-right spline-viewer { width: 100%; height: 100%; position: absolute; inset: 0; }
   .hero-tag {
     display: inline-flex; align-items: center; gap: 8px;
     font-family: 'DM Mono', monospace; font-size: 0.72rem;
@@ -114,22 +205,30 @@
   .hero-tag::before { content: ''; width: 28px; height: 1px; background: var(--green); }
   h1.hero-name {
     font-family: 'DM Serif Display', serif;
-    font-size: clamp(5.5rem, 9vw, 8rem);
-    line-height: 1.05; letter-spacing: -0.02em;
-    color: var(--text); margin-bottom: 1rem;
+    font-size: clamp(4.5rem, 6.5vw, 7rem);
+    line-height: 1.05; letter-spacing: -0.02em; margin-bottom: 1rem;
   }
-  h1.hero-name em { color: var(--accent); font-style: italic; }
+  .hero-name-first {
+    display: block;
+    background: linear-gradient(to bottom, var(--text) 30%, var(--muted) 120%);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+  }
+  h1.hero-name em { display: block; font-style: italic; -webkit-text-fill-color: var(--accent); color: var(--accent); }
   .hero-roles { font-size: 1rem; color: var(--muted); letter-spacing: 0.04em; margin-bottom: 2.5rem; }
   .hero-roles span { color: var(--accent2); }
-  .hero-desc { font-size: 1.05rem; color: var(--muted); max-width: 520px; line-height: 1.8; margin-bottom: 3rem; }
-  .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 2.5rem; }
+  .hero-socials-row { display: flex; align-items: center; gap: 1.5rem; }
+  .hero-socials-row::before { content: ''; width: 28px; height: 1px; background: var(--border2); flex-shrink: 0; }
+  .hero-socials-row a { font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); transition: color 0.2s; }
+  .hero-socials-row a:hover { color: var(--accent); }
   .btn-primary {
     display: inline-block; padding: 0.85rem 2.2rem;
-    background: var(--accent); color: #ffffff;
+    background: var(--accent); color: var(--bg);
     font-family: 'DM Sans', sans-serif; font-size: 0.82rem; font-weight: 500;
     letter-spacing: 0.1em; text-transform: uppercase; border-radius: 2px;
     border: none; cursor: pointer; transition: opacity 0.2s, transform 0.2s;
   }
+  .btn-primary--spaced { margin-top: 1rem; }
   .btn-primary:hover { opacity: 0.82; transform: translateY(-1px); }
   .btn-outline {
     display: inline-block; padding: 0.85rem 2.2rem;
@@ -138,13 +237,6 @@
     color: var(--muted); transition: border-color 0.2s, color 0.2s, transform 0.2s;
   }
   .btn-outline:hover { border-color: var(--text); color: var(--text); transform: translateY(-1px); }
-  .hero-socials {
-    position: absolute; right: 4rem; top: 50%; transform: translateY(-50%); z-index: 1;
-    display: flex; flex-direction: column; align-items: center; gap: 1.5rem;
-  }
-  .hero-socials::before, .hero-socials::after { content: ''; width: 1px; height: 80px; background: var(--border2); }
-  .hero-socials a { font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); writing-mode: vertical-rl; transition: color 0.2s; }
-  .hero-socials a:hover { color: var(--accent); }
 
   /* SECTIONS */
   section { padding: 7rem 4rem; transition: background 0.4s; }
@@ -224,16 +316,18 @@
   .proj-card:hover { border-color: var(--border2); transform: translateY(-4px); }
   .proj-card.hidden { display: none; }
   .proj-thumb { width: 100%; aspect-ratio: 16/9; overflow: hidden; position: relative; background: var(--bg3); }
+  .proj-thumb picture { display: block; width: 100%; height: 100%; }
   .proj-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.4s ease; }
   .proj-card:hover .proj-thumb img { transform: scale(1.06); }
   .proj-fallback { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-family: 'DM Serif Display', serif; font-size: 1.5rem; color: var(--accent); }
-  .proj-fallback-bg { position: absolute; inset: 0; background-image: radial-gradient(circle, rgba(200,184,138,0.08) 1px, transparent 1px); background-size: 20px 20px; }
+  .proj-fallback-bg { position: absolute; inset: 0; background-image: radial-gradient(circle, var(--accent-dot) 1px, transparent 1px); background-size: 20px 20px; }
   .proj-body { padding: 1.5rem; }
   .proj-name { font-size: 0.92rem; font-weight: 500; color: var(--text); margin-bottom: 0.3rem; }
   .proj-type { font-family: 'DM Mono', monospace; font-size: 0.68rem; color: var(--muted); letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 1rem; }
   .proj-link { display: inline-flex; align-items: center; gap: 6px; font-family: 'DM Mono', monospace; font-size: 0.7rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--accent2); transition: gap 0.2s; }
   .proj-link:hover { gap: 10px; }
   .proj-link svg { width: 12px; height: 12px; }
+  .proj-more--spaced { margin-top: 2.5rem; }
   .proj-more { display: flex; justify-content: center; margin-top: 3rem; }
 
   /* ACHIEVEMENTS */
@@ -247,7 +341,20 @@
   .ach-link { color: var(--accent2); text-decoration: underline; text-underline-offset: 3px; }
 
   /* CONTACT */
-  #contact { background: var(--bg2); }
+  #contact { background: var(--bg2); position: relative; overflow: hidden; }
+  /* 3D background scene: sits behind the content, never intercepts clicks.
+     The viewer uses events-target="global" so the robot still follows the
+     cursor even though the canvas itself is pointer-events: none. */
+  .contact-bg { position: absolute; inset: 0; z-index: 0; pointer-events: none; }
+  .contact-bg spline-viewer { position: absolute; inset: 0; width: 100%; height: 100%; }
+  /* Veil so text stays readable over the scene, fading toward the right
+     where the robot lives. */
+  .contact-bg::after {
+    content: ''; position: absolute; inset: 0;
+    background: linear-gradient(90deg, var(--bg2) 0%, transparent 55%),
+                linear-gradient(0deg, var(--bg2) 0%, transparent 25%);
+  }
+  #contact > :not(.contact-bg) { position: relative; z-index: 1; }
   .contact-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: start; }
   .contact-intro p { font-size: 1rem; color: var(--muted); line-height: 1.9; margin-bottom: 2rem; }
   .contact-links { display: flex; flex-direction: column; gap: 1rem; }
@@ -283,12 +390,24 @@
   .mobile-menu a:hover { color: var(--accent); }
   .mobile-close { position: absolute; top: 1.5rem; right: 2rem; background: none; border: none; color: var(--muted); font-size: 1.5rem; cursor: pointer; }
 
+  /* Tablets and small laptops: the desktop layout is cramped below ~1200px. */
+  @media (max-width: 1200px) and (min-width: 961px) {
+    nav { padding: 1.25rem 2.5rem; }
+    .hero-left { padding: 8rem 2.5rem 4rem; }
+    section { padding: 6rem 2.5rem; }
+    .about-grid { gap: 3rem; }
+    .contact-inner { gap: 3rem; }
+    .proj-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
   @media (max-width: 960px) {
     nav { padding: 1.25rem 2rem; }
     .nav-links { display: none; }
     .hamburger { display: flex; }
-    #hero { padding: 0 2rem; }
-    .hero-socials { display: none; }
+    #hero { flex-direction: column; }
+    .hero-left { flex: none; padding: 7rem 2rem 2rem; min-height: 55vh; justify-content: flex-end; }
+    .hero-right { flex: none; height: 45vh; }
+    .hero-divider { display: none; }
     section { padding: 5rem 2rem; }
     .about-grid, .contact-inner { grid-template-columns: 1fr; gap: 3rem; }
     .proj-grid { grid-template-columns: repeat(2, 1fr); }
@@ -301,12 +420,26 @@
     .proj-grid { grid-template-columns: 1fr; }
     .ach-grid { grid-template-columns: 1fr; }
     .about-stats { grid-template-columns: 1fr 1fr; }
+    /* The clamp() floor of 4.5rem never scales down; on a 360px screen the
+       name needs a real minimum. */
+    h1.hero-name { font-size: clamp(3rem, 14vw, 4.5rem); }
+    .hero-actions { gap: 0.75rem; }
+    .hero-actions .btn-primary, .hero-actions .btn-outline { padding: 0.85rem 1.5rem; }
+  }
+
+  @media (max-width: 400px) {
+    section { padding: 4rem 1.25rem; }
+    .hero-left { padding: 7rem 1.25rem 2rem; }
+    .about-stats { grid-template-columns: 1fr; }
+    nav { padding: 1.25rem 1.25rem; }
   }
 </style>
 </head>
 <body>
 
-<nav>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<nav aria-label="Main">
   <a class="nav-logo" href="#hero">YP</a>
   <div class="nav-right">
     <div class="nav-links">
@@ -317,42 +450,52 @@
       <a href="#contact" class="nav-cta">Contact</a>
     </div>
     <div class="theme-wrap">
-      <span class="t-icon">🌙</span>
-      <button class="theme-btn" aria-label="Toggle theme" onclick="toggleTheme()"></button>
-      <span class="t-icon">☀️</span>
+      <span class="t-icon" aria-hidden="true">🌙</span>
+      <button class="theme-btn" type="button" role="switch" aria-checked="false"
+              aria-label="Toggle light and dark theme" onclick="toggleTheme()"></button>
+      <span class="t-icon" aria-hidden="true">☀️</span>
     </div>
   </div>
-  <button class="hamburger" onclick="document.querySelector('.mobile-menu').classList.add('open')">
-    <span></span><span></span><span></span>
+  <button class="hamburger" type="button" aria-label="Open menu"
+          aria-expanded="false" aria-controls="mobileMenu" onclick="openMenu()">
+    <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
   </button>
 </nav>
 
-<div class="mobile-menu">
-  <button class="mobile-close" onclick="document.querySelector('.mobile-menu').classList.remove('open')">✕</button>
-  <a href="#about" onclick="document.querySelector('.mobile-menu').classList.remove('open')">About</a>
-  <a href="#experience" onclick="document.querySelector('.mobile-menu').classList.remove('open')">Experience</a>
-  <a href="#projects" onclick="document.querySelector('.mobile-menu').classList.remove('open')">Projects</a>
-  <a href="#achievements" onclick="document.querySelector('.mobile-menu').classList.remove('open')">Achievements</a>
-  <a href="#contact" onclick="document.querySelector('.mobile-menu').classList.remove('open')">Contact</a>
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-close" type="button" aria-label="Close menu" onclick="closeMenu()">✕</button>
+  <a href="#about" onclick="closeMenu()">About</a>
+  <a href="#experience" onclick="closeMenu()">Experience</a>
+  <a href="#projects" onclick="closeMenu()">Projects</a>
+  <a href="#achievements" onclick="closeMenu()">Achievements</a>
+  <a href="#contact" onclick="closeMenu()">Contact</a>
 </div>
 
 <!-- HERO -->
+<main id="main">
+
 <section id="hero">
-  <canvas id="three-canvas"></canvas>
-  <div class="hero-content">
+  <div class="hero-spotlight" id="heroSpotlight"></div>
+  <div class="hero-divider"></div>
+  <div class="hero-left">
     <div class="hero-tag">available for new roles</div>
-    <h1 class="hero-name">Yash<br><em>Patel</em></h1>
+    <h1 class="hero-name">
+      <span class="hero-name-first">Yash</span>
+      <em>Patel</em>
+    </h1>
     <p class="hero-roles">Software Engineer &nbsp;+&nbsp; QA Automation</p>
-    <!-- <p class="hero-desc">Engineering resilient, full-stack solutions and high-scale automation frameworks for leading financial institutions. I bridge the gap between rapid development and enterprise-grade reliability, with a proven track record of scaling digital products to millions of users.</p>     -->
     <div class="hero-actions">
       <a href="#projects" class="btn-primary">View Projects</a>
       <a href="#contact" class="btn-outline">Get in Touch</a>
     </div>
+    <div class="hero-socials-row">
+      <a href="https://www.linkedin.com/in/yashpatel458/" target="_blank">LinkedIn</a>
+      <a href="https://github.com/yashpatel458" target="_blank">GitHub</a>
+      <a href="https://twitter.com/yashpatel458" target="_blank">Twitter</a>
+    </div>
   </div>
-  <div class="hero-socials">
-    <a href="https://www.linkedin.com/in/yashpatel458/" target="_blank">LinkedIn</a>
-    <a href="https://github.com/yashpatel458" target="_blank">GitHub</a>
-    <a href="https://twitter.com/yashpatel458" target="_blank">Twitter</a>
+  <div class="hero-right">
+    <spline-viewer url="https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode" loading="lazy"></spline-viewer>
   </div>
 </section>
 
@@ -363,7 +506,12 @@
   <div class="about-grid">
     <div class="about-text reveal">
       <div class="about-photo-wrap">
-        <img src="img/profile-img.jpeg" alt="Yash Patel" class="about-photo" onerror="this.style.display='none'; this.nextElementSibling.style.display='none';">
+        <picture>
+          <source srcset="img/profile-img.webp" type="image/webp">
+          <img src="img/profile-img-400.jpg" alt="Yash Patel" class="about-photo" width="400" height="400"
+               loading="eager" fetchpriority="high" decoding="async"
+               onerror="this.style.display='none'; this.closest('.about-photo-wrap').querySelector('.about-photo-ring').style.display='none';">
+        </picture>
         <div class="about-photo-ring"></div>
       </div>
 
@@ -432,14 +580,14 @@
   <div class="section-label">02 — Experience</div>
   <h2 class="section-title">Where I've <em>worked</em></h2>
   <div>
-    <div class="exp-item reveal"><div><div class="exp-period">2025 – Present</div><div class="exp-location">Remote 🇨🇦</div></div><div><div class="exp-company">Fidelity Investments Canada</div><div class="exp-role">Software QA Automation Analyst</div><p class="exp-desc">Worked within enterprise Agile teams at one of Canada's leading financial services firms, driving quality assurance for web and internal applications. Developed test strategies, automated regression suites, and collaborated with developers to ship reliable software.</p></div></div>    
-    <div class="exp-item reveal"><div><div class="exp-period">2024 – 2025</div><div class="exp-location">Toronto, ON 🇨🇦</div></div><div><div class="exp-company">Fidelity Investments Canada</div><div class="exp-role">Student, QA Analyst Co-op</div><p class="exp-desc">Contributed to the quality engineering lifecycle at a leading financial services provider, supporting enterprise-level Agile teams. Focused on automating critical regression tests and refining test plans for internal and web-based platforms, gaining hands-on experience in shipping production-ready software alongside senior developers.</p></div></div>
-    <div class="exp-item reveal"><div><div class="exp-period">2023 – 2024</div><div class="exp-location">Windsor, ON 🇨🇦</div></div><div><div class="exp-company">University of Windsor</div><div class="exp-role">Social Media & Event Coordinator</div><p class="exp-desc">Orchestrated 50+ on-campus events with 100+ participants each for the International Student Centre. Grew Instagram followers by 23% within the first 30 days through targeted campaigns.</p></div></div>
-    <div class="exp-item reveal"><div><div class="exp-period">2023</div><div class="exp-location">Vadodara, GJ 🇮🇳</div></div><div><div class="exp-company">KraftBase</div><div class="exp-role">Software Developer Intern</div><p class="exp-desc">Built and maintained full-stack web features for client-facing products. Collaborated with design and product teams in a fast-paced startup environment to deliver features on tight timelines.</p></div></div>
-   <div class="exp-item reveal"><div><div class="exp-period">2022 – 2023</div><div class="exp-location">Vadodara, GJ 🇮🇳</div></div><div><div class="exp-company">SoftSages Technology</div><div class="exp-role">Software Developer Intern</div><p class="exp-desc">Developed responsive, accessible UI components and landing pages for multiple client projects. Won 1st place at their internal HackFiesta 2023 hackathon.</p></div></div>
-    <div class="exp-item reveal"><div><div class="exp-period">2022 </div><div class="exp-location">Vadodara, GJ 🇮🇳</div></div><div><div class="exp-company">DevKrutiTech</div><div class="exp-role">Software Developer Intern</div><p class="exp-desc">Developed responsive, accessible UI components and landing pages for multiple client projects.</p></div></div>
-    <div class="exp-item reveal"><div><div class="exp-period">2021 – 2022</div><div class="exp-location">Anand, GJ 🇮🇳</div></div><div><div class="exp-company">Club Gamma</div><div class="exp-role">Web Expert — Core Committee Member</div><p class="exp-desc">Served as a core committee member representing web development, mentoring peers and leading workshops on frontend technologies.</p></div></div>
-    <div class="exp-item reveal"><div><div class="exp-period">2020 – 2021</div><div class="exp-location">Remote 🌐</div></div><div><div class="exp-company">GeekVide</div><div class="exp-role">Co-Founder (exited 2021)</div><p class="exp-desc">Launched and led an online news media platform covering tech trends. Grew to 260k organic website impressions and 1.2M monthly Pinterest impressions. Published 50+ articles with ~5k daily clicks; monetized through Google AdSense and brand collaborations.</p></div></div>
+    <div class="exp-item reveal"><div><div class="exp-period">2025 – Present</div><div class="exp-location">Remote <span aria-hidden="true">🇨🇦</span></div></div><div><div class="exp-company">Fidelity Investments Canada</div><div class="exp-role">Software QA Automation Analyst</div><p class="exp-desc">Worked within enterprise Agile teams at one of Canada's leading financial services firms, driving quality assurance for web and internal applications. Developed test strategies, automated regression suites, and collaborated with developers to ship reliable software.</p></div></div>
+    <div class="exp-item reveal"><div><div class="exp-period">2024 – 2025</div><div class="exp-location">Toronto, ON <span aria-hidden="true">🇨🇦</span></div></div><div><div class="exp-company">Fidelity Investments Canada</div><div class="exp-role">Student, QA Analyst Co-op</div><p class="exp-desc">Contributed to the quality engineering lifecycle at a leading financial services provider, supporting enterprise-level Agile teams. Focused on automating critical regression tests and refining test plans for internal and web-based platforms, gaining hands-on experience in shipping production-ready software alongside senior developers.</p></div></div>
+    <div class="exp-item reveal"><div><div class="exp-period">2023 – 2024</div><div class="exp-location">Windsor, ON <span aria-hidden="true">🇨🇦</span></div></div><div><div class="exp-company">University of Windsor</div><div class="exp-role">Social Media & Event Coordinator</div><p class="exp-desc">Orchestrated 50+ on-campus events with 100+ participants each for the International Student Centre. Grew Instagram followers by 23% within the first 30 days through targeted campaigns.</p></div></div>
+    <div class="exp-item reveal"><div><div class="exp-period">2023</div><div class="exp-location">Vadodara, GJ <span aria-hidden="true">🇮🇳</span></div></div><div><div class="exp-company">KraftBase</div><div class="exp-role">Software Developer Intern</div><p class="exp-desc">Built and maintained full-stack web features for client-facing products. Collaborated with design and product teams in a fast-paced startup environment to deliver features on tight timelines.</p></div></div>
+   <div class="exp-item reveal"><div><div class="exp-period">2022 – 2023</div><div class="exp-location">Vadodara, GJ <span aria-hidden="true">🇮🇳</span></div></div><div><div class="exp-company">SoftSages Technology</div><div class="exp-role">Software Developer Intern</div><p class="exp-desc">Developed responsive, accessible UI components and landing pages for multiple client projects. Won 1st place at their internal HackFiesta 2023 hackathon.</p></div></div>
+    <div class="exp-item reveal"><div><div class="exp-period">2022 </div><div class="exp-location">Vadodara, GJ <span aria-hidden="true">🇮🇳</span></div></div><div><div class="exp-company">DevKrutiTech</div><div class="exp-role">Software Developer Intern</div><p class="exp-desc">Developed responsive, accessible UI components and landing pages for multiple client projects.</p></div></div>
+    <div class="exp-item reveal"><div><div class="exp-period">2021 – 2022</div><div class="exp-location">Anand, GJ <span aria-hidden="true">🇮🇳</span></div></div><div><div class="exp-company">Club Gamma</div><div class="exp-role">Web Expert — Core Committee Member</div><p class="exp-desc">Served as a core committee member representing web development, mentoring peers and leading workshops on frontend technologies.</p></div></div>
+    <div class="exp-item reveal"><div><div class="exp-period">2020 – 2021</div><div class="exp-location">Remote <span aria-hidden="true">🌐</span></div></div><div><div class="exp-company">GeekVide</div><div class="exp-role">Co-Founder (exited 2021)</div><p class="exp-desc">Launched and led an online news media platform covering tech trends. Grew to 260k organic website impressions and 1.2M monthly Pinterest impressions. Published 50+ articles with ~5k daily clicks; monetized through Google AdSense and brand collaborations.</p></div></div>
   </div>
 </section>
 
@@ -458,79 +606,80 @@
   <div class="section-label">04 — Projects</div>
   <h2 class="section-title">Things I've <em>built</em></h2>
   <div class="proj-filter">
-    <button class="filter-btn active" onclick="filterProjects('all',this)">All</button>
-    <button class="filter-btn" onclick="filterProjects('major',this)">Major Projects</button>
-    <button class="filter-btn" onclick="filterProjects('mini',this)">Mini Projects</button>
+    <button class="filter-btn active" type="button" aria-pressed="true" onclick="filterProjects('all',this)">All</button>
+    <button class="filter-btn" type="button" aria-pressed="false" onclick="filterProjects('major',this)">Major Projects</button>
+    <button class="filter-btn" type="button" aria-pressed="false" onclick="filterProjects('mini',this)">Mini Projects</button>
   </div>
+  <p id="projStatus" class="visually-hidden" role="status" aria-live="polite"></p>
   <div class="proj-grid">
 
     <div class="proj-card reveal" data-type="major">
-      <div class="proj-thumb"><img src="img/portfolio/requestrouter.png" alt="RequestRouter" onerror="this.style.display='none'; this.insertAdjacentHTML('afterend','<div class=proj-fallback><div class=proj-fallback-bg></div><span>RR</span></div>')"></div>
+      <div class="proj-thumb"><picture><source srcset="img/portfolio/requestrouter.webp" type="image/webp"><img src="img/portfolio/requestrouter-800.jpg" alt="" width="800" height="425" loading="lazy" decoding="async" onerror="this.style.display='none'; this.insertAdjacentHTML('afterend','<div class=proj-fallback><div class=proj-fallback-bg></div><span>RR</span></div>')"></picture></div>
       <div class="proj-body"><div class="proj-name">RequestRouter</div><div class="proj-type">Major · API Tool</div><a href="https://github.com/yashpatel458/RequestRouter" target="_blank" class="proj-link">View on GitHub <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2.5 9.5L9.5 2.5M5 2.5h4.5V7"/></svg></a></div>
     </div>
 
     <div class="proj-card reveal" data-type="major">
-      <div class="proj-thumb"><img src="img/portfolio/edumavericks.png" alt="EduMavericks" onerror="this.style.display='none'; this.insertAdjacentHTML('afterend','<div class=proj-fallback><div class=proj-fallback-bg></div><span>EM</span></div>')"></div>
+      <div class="proj-thumb"><picture><source srcset="img/portfolio/edumavericks.webp" type="image/webp"><img src="img/portfolio/edumavericks-800.jpg" alt="" width="800" height="425" loading="lazy" decoding="async" onerror="this.style.display='none'; this.insertAdjacentHTML('afterend','<div class=proj-fallback><div class=proj-fallback-bg></div><span>EM</span></div>')"></picture></div>
       <div class="proj-body"><div class="proj-name">EduMavericks</div><div class="proj-type">Major · EdTech Platform</div><a href="https://github.com/yashpatel458/Edu-Mavericks" target="_blank" class="proj-link">View on GitHub <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2.5 9.5L9.5 2.5M5 2.5h4.5V7"/></svg></a></div>
     </div>
 
     <div class="proj-card reveal" data-type="major">
-      <div class="proj-thumb"><img src="img/portfolio/aeroquest.png" alt="Aeroquest" onerror="this.style.display='none'; this.insertAdjacentHTML('afterend','<div class=proj-fallback><div class=proj-fallback-bg></div><span>AQ</span></div>')"></div>
+      <div class="proj-thumb"><picture><source srcset="img/portfolio/aeroquest.webp" type="image/webp"><img src="img/portfolio/aeroquest-800.jpg" alt="" width="800" height="425" loading="lazy" decoding="async" onerror="this.style.display='none'; this.insertAdjacentHTML('afterend','<div class=proj-fallback><div class=proj-fallback-bg></div><span>AQ</span></div>')"></picture></div>
       <div class="proj-body"><div class="proj-name">Aeroquest</div><div class="proj-type">Major · Travel App</div><a href="https://github.com/yashpatel458/Aeroquest" target="_blank" class="proj-link">View on GitHub <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2.5 9.5L9.5 2.5M5 2.5h4.5V7"/></svg></a></div>
     </div>
 
     <div class="proj-card reveal" data-type="major">
-      <div class="proj-thumb"><img src="img/portfolio/triphackr.png" alt="TripHackr" onerror="this.style.display='none'; this.insertAdjacentHTML('afterend','<div class=proj-fallback><div class=proj-fallback-bg></div><span>TH</span></div>')"></div>
+      <div class="proj-thumb"><picture><source srcset="img/portfolio/triphackr.webp" type="image/webp"><img src="img/portfolio/triphackr-800.jpg" alt="" width="800" height="425" loading="lazy" decoding="async" onerror="this.style.display='none'; this.insertAdjacentHTML('afterend','<div class=proj-fallback><div class=proj-fallback-bg></div><span>TH</span></div>')"></picture></div>
       <div class="proj-body"><div class="proj-name">TripHackr</div><div class="proj-type">Major · Travel Platform</div><a href="https://github.com/yashpatel458/Trip-Hackr" target="_blank" class="proj-link">View on GitHub <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2.5 9.5L9.5 2.5M5 2.5h4.5V7"/></svg></a></div>
     </div>
 
     <div class="proj-card reveal" data-type="major">
-      <div class="proj-thumb"><img src="img/portfolio/cvmate.jpg" alt="CVMate" onerror="this.style.display='none'; this.insertAdjacentHTML('afterend','<div class=proj-fallback><div class=proj-fallback-bg></div><span>CV</span></div>')"></div>
+      <div class="proj-thumb"><picture><source srcset="img/portfolio/cvmate.webp" type="image/webp"><img src="img/portfolio/cvmate-800.jpg" alt="" width="800" height="425" loading="lazy" decoding="async" onerror="this.style.display='none'; this.insertAdjacentHTML('afterend','<div class=proj-fallback><div class=proj-fallback-bg></div><span>CV</span></div>')"></picture></div>
       <div class="proj-body"><div class="proj-name">CVMate</div><div class="proj-type">Major · Resume Tool</div><a href="https://github.com/yashpatel458/CV-MATE" target="_blank" class="proj-link">View on GitHub <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2.5 9.5L9.5 2.5M5 2.5h4.5V7"/></svg></a></div>
     </div>
 
     <div class="proj-card reveal" data-type="major">
-      <div class="proj-thumb"><img src="img/portfolio/virtualpointer.png" alt="Virtual Pointer" onerror="this.style.display='none'; this.insertAdjacentHTML('afterend','<div class=proj-fallback><div class=proj-fallback-bg></div><span>VP</span></div>')"></div>
+      <div class="proj-thumb"><picture><source srcset="img/portfolio/virtualpointer.webp" type="image/webp"><img src="img/portfolio/virtualpointer-800.jpg" alt="" width="800" height="425" loading="lazy" decoding="async" onerror="this.style.display='none'; this.insertAdjacentHTML('afterend','<div class=proj-fallback><div class=proj-fallback-bg></div><span>VP</span></div>')"></picture></div>
       <div class="proj-body"><div class="proj-name">Virtual Pointer</div><div class="proj-type">Major · Computer Vision</div><a href="https://github.com/yashpatel458/Virtual-Pointer" target="_blank" class="proj-link">View on GitHub <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2.5 9.5L9.5 2.5M5 2.5h4.5V7"/></svg></a></div>
     </div>
 
     <div class="proj-card reveal" data-type="major">
-      <div class="proj-thumb"><img src="img/portfolio/syrentals.png" alt="SY Car Rentals" onerror="this.style.display='none'; this.insertAdjacentHTML('afterend','<div class=proj-fallback><div class=proj-fallback-bg></div><span>SY</span></div>')"></div>
+      <div class="proj-thumb"><picture><source srcset="img/portfolio/syrentals.webp" type="image/webp"><img src="img/portfolio/syrentals-800.jpg" alt="" width="800" height="425" loading="lazy" decoding="async" onerror="this.style.display='none'; this.insertAdjacentHTML('afterend','<div class=proj-fallback><div class=proj-fallback-bg></div><span>SY</span></div>')"></picture></div>
       <div class="proj-body"><div class="proj-name">SY Car Rentals</div><div class="proj-type">Major · Web App</div><a href="https://github.com/yashpatel458/Car-Rental-System" target="_blank" class="proj-link">View on GitHub <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2.5 9.5L9.5 2.5M5 2.5h4.5V7"/></svg></a></div>
     </div>
 
     <div class="proj-card reveal" data-type="mini">
-      <div class="proj-thumb"><img src="img/portfolio/simon.png" alt="Simon Game" onerror="this.style.display='none'; this.insertAdjacentHTML('afterend','<div class=proj-fallback><div class=proj-fallback-bg></div><span>SG</span></div>')"></div>
+      <div class="proj-thumb"><picture><source srcset="img/portfolio/simon.webp" type="image/webp"><img src="img/portfolio/simon-800.jpg" alt="" width="800" height="425" loading="lazy" decoding="async" onerror="this.style.display='none'; this.insertAdjacentHTML('afterend','<div class=proj-fallback><div class=proj-fallback-bg></div><span>SG</span></div>')"></picture></div>
       <div class="proj-body"><div class="proj-name">Simon Game</div><div class="proj-type">Mini · Browser Game</div><a href="https://github.com/yashpatel458/simon.github.io" target="_blank" class="proj-link">View on GitHub <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2.5 9.5L9.5 2.5M5 2.5h4.5V7"/></svg></a></div>
     </div>
 
     <div class="proj-card reveal" data-type="mini">
-      <div class="proj-thumb"><img src="img/portfolio/shrinker.png" alt="Shrinker" onerror="this.style.display='none'; this.insertAdjacentHTML('afterend','<div class=proj-fallback><div class=proj-fallback-bg></div><span>SH</span></div>')"></div>
+      <div class="proj-thumb"><picture><source srcset="img/portfolio/shrinker.webp" type="image/webp"><img src="img/portfolio/shrinker-800.jpg" alt="" width="800" height="425" loading="lazy" decoding="async" onerror="this.style.display='none'; this.insertAdjacentHTML('afterend','<div class=proj-fallback><div class=proj-fallback-bg></div><span>SH</span></div>')"></picture></div>
       <div class="proj-body"><div class="proj-name">Shrinker</div><div class="proj-type">Mini · URL Shortener</div><a href="https://github.com/yashpatel458/shrinker.github.io/" target="_blank" class="proj-link">View on GitHub <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2.5 9.5L9.5 2.5M5 2.5h4.5V7"/></svg></a></div>
     </div>
 
     <div class="proj-card reveal" data-type="mini">
-      <div class="proj-thumb"><img src="img/portfolio/drumkit.png" alt="Drum Kit" onerror="this.style.display='none'; this.insertAdjacentHTML('afterend','<div class=proj-fallback><div class=proj-fallback-bg></div><span>DK</span></div>')"></div>
+      <div class="proj-thumb"><picture><source srcset="img/portfolio/drumkit.webp" type="image/webp"><img src="img/portfolio/drumkit-800.jpg" alt="" width="800" height="425" loading="lazy" decoding="async" onerror="this.style.display='none'; this.insertAdjacentHTML('afterend','<div class=proj-fallback><div class=proj-fallback-bg></div><span>DK</span></div>')"></picture></div>
       <div class="proj-body"><div class="proj-name">Drum Kit</div><div class="proj-type">Mini · Browser Game</div><a href="https://github.com/yashpatel458/drumkit.github.io" target="_blank" class="proj-link">View on GitHub <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2.5 9.5L9.5 2.5M5 2.5h4.5V7"/></svg></a></div>
     </div>
 
     <div class="proj-card reveal" data-type="mini">
-      <div class="proj-thumb"><img src="img/portfolio/diceysion.png" alt="Diceysion" onerror="this.style.display='none'; this.insertAdjacentHTML('afterend','<div class=proj-fallback><div class=proj-fallback-bg></div><span>DC</span></div>')"></div>
+      <div class="proj-thumb"><picture><source srcset="img/portfolio/diceysion.webp" type="image/webp"><img src="img/portfolio/diceysion-800.jpg" alt="" width="800" height="425" loading="lazy" decoding="async" onerror="this.style.display='none'; this.insertAdjacentHTML('afterend','<div class=proj-fallback><div class=proj-fallback-bg></div><span>DC</span></div>')"></picture></div>
       <div class="proj-body"><div class="proj-name">Diceysion Game</div><div class="proj-type">Mini · Browser Game</div><a href="https://github.com/yashpatel458/Diceysion" target="_blank" class="proj-link">View on GitHub <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2.5 9.5L9.5 2.5M5 2.5h4.5V7"/></svg></a></div>
     </div>
 
     <div class="proj-card reveal" data-type="mini">
-      <div class="proj-thumb"><img src="img/portfolio/newsletter.png" alt="Newsletter Signup" onerror="this.style.display='none'; this.insertAdjacentHTML('afterend','<div class=proj-fallback><div class=proj-fallback-bg></div><span>NL</span></div>')"></div>
+      <div class="proj-thumb"><picture><source srcset="img/portfolio/newsletter.webp" type="image/webp"><img src="img/portfolio/newsletter-800.jpg" alt="" width="800" height="425" loading="lazy" decoding="async" onerror="this.style.display='none'; this.insertAdjacentHTML('afterend','<div class=proj-fallback><div class=proj-fallback-bg></div><span>NL</span></div>')"></picture></div>
       <div class="proj-body"><div class="proj-name">Newsletter Signup</div><div class="proj-type">Mini · Web Component</div><a href="https://github.com/yashpatel458/Newsletter-Signup" target="_blank" class="proj-link">View on GitHub <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2.5 9.5L9.5 2.5M5 2.5h4.5V7"/></svg></a></div>
     </div>
 
     <div class="proj-card reveal" data-type="mini">
-      <div class="proj-thumb"><img src="img/portfolio/converter.png" alt="Seamless Converter" onerror="this.style.display='none'; this.insertAdjacentHTML('afterend','<div class=proj-fallback><div class=proj-fallback-bg></div><span>SC</span></div>')"></div>
+      <div class="proj-thumb"><picture><source srcset="img/portfolio/converter.webp" type="image/webp"><img src="img/portfolio/converter-800.jpg" alt="" width="800" height="425" loading="lazy" decoding="async" onerror="this.style.display='none'; this.insertAdjacentHTML('afterend','<div class=proj-fallback><div class=proj-fallback-bg></div><span>SC</span></div>')"></picture></div>
       <div class="proj-body"><div class="proj-name">Seamless Converter</div><div class="proj-type">Mini · Utility Tool</div><a href="https://github.com/yashpatel458/Seamless-Converter" target="_blank" class="proj-link">View on GitHub <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2.5 9.5L9.5 2.5M5 2.5h4.5V7"/></svg></a></div>
     </div>
 
     <div class="proj-card reveal" data-type="mini">
-      <div class="proj-thumb"><img src="img/portfolio/ironman.png" alt="Ironman Portfolio" onerror="this.style.display='none'; this.insertAdjacentHTML('afterend','<div class=proj-fallback><div class=proj-fallback-bg></div><span>IM</span></div>')"></div>
+      <div class="proj-thumb"><picture><source srcset="img/portfolio/ironman.webp" type="image/webp"><img src="img/portfolio/ironman-800.jpg" alt="" width="800" height="425" loading="lazy" decoding="async" onerror="this.style.display='none'; this.insertAdjacentHTML('afterend','<div class=proj-fallback><div class=proj-fallback-bg></div><span>IM</span></div>')"></picture></div>
       <div class="proj-body"><div class="proj-name">Ironman Portfolio</div><div class="proj-type">Mini · Portfolio UI</div><a href="https://github.com/yashpatel458/Ironman.github.io/" target="_blank" class="proj-link">View on GitHub <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2.5 9.5L9.5 2.5M5 2.5h4.5V7"/></svg></a></div>
     </div>
 
@@ -543,41 +692,46 @@
   <div class="section-label">05 — Achievements & Certifications</div>
   <h2 class="section-title">Milestones & <em>recognition</em></h2>
   <div class="ach-grid">
-    <div class="ach-card reveal"><div class="ach-icon">🏆</div><div class="ach-title">1st Place — HackFiesta 2023</div><div class="ach-org">24-hour Hackathon · SoftSages Technology</div></div>
-    <div class="ach-card reveal"><div class="ach-icon">⚡</div><div class="ach-title">Web Expert — Core Committee Member</div><div class="ach-org">Club Gamma</div></div>
-    <div class="ach-card reveal"><div class="ach-icon">🎯</div><div class="ach-title">National Level Hackathon Coordinator</div><div class="ach-org">Pythakon 2k22 · CHARUSAT</div></div>
-    <div class="ach-card reveal"><div class="ach-icon">📜</div><div class="ach-title"><a class="ach-link" href="https://www.udemy.com/certificate/UC-e68413dd-38f8-47bb-a292-8d6ec8bb6286/" target="_blank">The Complete Web Development Bootcamp</a></div><div class="ach-org">The App Brewery · Udemy</div></div>
-    <div class="ach-card reveal"><div class="ach-icon">☁️</div><div class="ach-title"><a class="ach-link" href="https://www.cloudskillsboost.google/public_profiles/2d60d726-0509-4b06-a479-b7cb6490c2a1" target="_blank">30 Days of Google Cloud Engineering</a></div><div class="ach-org">Qwiklabs · Google</div></div>
-    <div class="ach-card reveal"><div class="ach-icon">🤖</div><div class="ach-title"><a class="ach-link" href="https://courses.nvidia.com/certificates/b1849e7bb9874c418943b0d3f5db601b" target="_blank">Fundamentals of Deep Learning</a></div><div class="ach-org">NVIDIA Deep Learning Institute</div></div>
-    <div class="ach-card reveal"><div class="ach-icon">🏦</div><div class="ach-title"><a class="ach-link" href="https://insidesherpa.s3.amazonaws.com/completion-certificates/Goldman%20Sachs/NPdeQ43o8P9HJmJzg_Goldman%20Sachs_JvzA4249kpYnpKTaN_1625035373478_completion_certificate.pdf" target="_blank">Engineering Virtual Program</a></div><div class="ach-org">Goldman Sachs · Forage</div></div>
-    <div class="ach-card reveal"><div class="ach-icon">☕</div><div class="ach-title"><a class="ach-link" href="https://www.coursera.org/account/accomplishments/verify/MLGRXDJUX8Z9" target="_blank">Java Programming: Solving Problems with Software</a></div><div class="ach-org">Duke University · Coursera</div></div>
-    <div class="ach-card reveal"><div class="ach-icon">🌐</div><div class="ach-title">Introduction to Networking</div><div class="ach-org">New York University · EDX</div></div>
+    <div class="ach-card reveal"><div class="ach-icon" aria-hidden="true">🏆</div><div class="ach-title">1st Place — HackFiesta 2023</div><div class="ach-org">24-hour Hackathon · SoftSages Technology</div></div>
+    <div class="ach-card reveal"><div class="ach-icon" aria-hidden="true">⚡</div><div class="ach-title">Web Expert — Core Committee Member</div><div class="ach-org">Club Gamma</div></div>
+    <div class="ach-card reveal"><div class="ach-icon" aria-hidden="true">🎯</div><div class="ach-title">National Level Hackathon Coordinator</div><div class="ach-org">Pythakon 2k22 · CHARUSAT</div></div>
+    <div class="ach-card reveal"><div class="ach-icon" aria-hidden="true">📜</div><div class="ach-title"><a class="ach-link" href="https://www.udemy.com/certificate/UC-e68413dd-38f8-47bb-a292-8d6ec8bb6286/" target="_blank">The Complete Web Development Bootcamp</a></div><div class="ach-org">The App Brewery · Udemy</div></div>
+    <div class="ach-card reveal"><div class="ach-icon" aria-hidden="true">☁️</div><div class="ach-title"><a class="ach-link" href="https://www.cloudskillsboost.google/public_profiles/2d60d726-0509-4b06-a479-b7cb6490c2a1" target="_blank">30 Days of Google Cloud Engineering</a></div><div class="ach-org">Qwiklabs · Google</div></div>
+    <div class="ach-card reveal"><div class="ach-icon" aria-hidden="true">🤖</div><div class="ach-title"><a class="ach-link" href="https://courses.nvidia.com/certificates/b1849e7bb9874c418943b0d3f5db601b" target="_blank">Fundamentals of Deep Learning</a></div><div class="ach-org">NVIDIA Deep Learning Institute</div></div>
+    <div class="ach-card reveal"><div class="ach-icon" aria-hidden="true">🏦</div><div class="ach-title"><a class="ach-link" href="https://insidesherpa.s3.amazonaws.com/completion-certificates/Goldman%20Sachs/NPdeQ43o8P9HJmJzg_Goldman%20Sachs_JvzA4249kpYnpKTaN_1625035373478_completion_certificate.pdf" target="_blank">Engineering Virtual Program</a></div><div class="ach-org">Goldman Sachs · Forage</div></div>
+    <div class="ach-card reveal"><div class="ach-icon" aria-hidden="true">☕</div><div class="ach-title"><a class="ach-link" href="https://www.coursera.org/account/accomplishments/verify/MLGRXDJUX8Z9" target="_blank">Java Programming: Solving Problems with Software</a></div><div class="ach-org">Duke University · Coursera</div></div>
+    <div class="ach-card reveal"><div class="ach-icon" aria-hidden="true">🌐</div><div class="ach-title">Introduction to Networking</div><div class="ach-org">New York University · EDX</div></div>
   </div>
-  <div class="proj-more" style="margin-top:2.5rem"><a href="https://www.linkedin.com/in/yashpatel458/details/certifications/" target="_blank" class="btn-outline">View All Certifications →</a></div>
+  <div class="proj-more proj-more--spaced"><a href="https://www.linkedin.com/in/yashpatel458/details/certifications/" target="_blank" class="btn-outline">View All Certifications →</a></div>
 </section>
 
 <!-- CONTACT -->
 <section id="contact">
+  <!-- Robot-follows-cursor background (CC0 scene, self-hosted in assets/).
+       Source: https://community.spline.design/file/6c10e2d8-a3e4-43a6-b43c-eecbbd75cf78 -->
+  <div class="contact-bg" id="contactSpline" aria-hidden="true"
+       data-scene-url="assets/robot-scene.splinecode"></div>
   <div class="section-label">06 — Contact</div>
   <h2 class="section-title">Let's <em>connect</em></h2>
   <div class="contact-inner">
     <div class="contact-intro reveal">
       <p>I'm actively exploring new opportunities in software development and QA. Whether you have a role in mind, a project to collaborate on, or just want to say hello — my inbox is open.</p>
       <p>Based in Canada. Open to remote and hybrid roles.</p>
-      <a href="mailto:yashpatel.sde@gmail.com" class="btn-primary" style="margin-top:1rem">Send me an Email</a>
+      <a href="mailto:yashpatel.sde@gmail.com" class="btn-primary btn-primary--spaced">Send me an Email</a>
     </div>
     <div class="contact-links reveal">
-      <a href="mailto:yashpatel.sde@gmail.com" class="contact-link"><div class="contact-link-icon"><svg viewBox="0 0 24 24"><path d="M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2zm0 2l-8 5-8-5h16zm0 12H4V9l8 5 8-5v9z"/></svg></div><div class="contact-link-label"><strong>Email</strong><span>yashpatel.sde@gmail.com</span></div></a>
-      <a href="https://www.linkedin.com/in/yashpatel458/" target="_blank" class="contact-link"><div class="contact-link-icon"><svg viewBox="0 0 24 24"><path d="M19 3H5a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2V5a2 2 0 00-2-2zm-9 14H7V9h3v8zm-1.5-9.3a1.7 1.7 0 110-3.4 1.7 1.7 0 010 3.4zM17 17h-3v-4.1c0-1 0-2.3-1.4-2.3-1.4 0-1.6 1.1-1.6 2.2V17h-3V9h2.9v1.1h.1c.4-.8 1.4-1.6 2.9-1.6 3.1 0 3.7 2 3.7 4.7V17z"/></svg></div><div class="contact-link-label"><strong>LinkedIn</strong><span>linkedin.com/in/yashpatel458</span></div></a>
-      <a href="https://github.com/yashpatel458" target="_blank" class="contact-link"><div class="contact-link-icon"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12c0 4.42 2.87 8.17 6.84 9.49.5.09.68-.22.68-.48v-1.7C6.73 19.9 6.14 17.97 6.14 17.97c-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.89 1.53 2.34 1.09 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.93 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02A9.56 9.56 0 0112 7.4c.85.004 1.71.115 2.51.337 1.909-1.294 2.747-1.017 2.747-1.017.546 1.373.202 2.386.1 2.638.64.7 1.028 1.593 1.028 2.685 0 3.83-2.337 4.675-4.565 4.923.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48A10.019 10.019 0 0022 12c0-5.52-4.48-10-10-10z"/></svg></div><div class="contact-link-label"><strong>GitHub</strong><span>github.com/yashpatel458</span></div></a>
-      <a href="https://twitter.com/yashpatel458" target="_blank" class="contact-link"><div class="contact-link-icon"><svg viewBox="0 0 24 24"><path d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 01-1.93.07 4.28 4.28 0 004 2.98 8.521 8.521 0 01-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23z"/></svg></div><div class="contact-link-label"><strong>Twitter</strong><span>@yashpatel458</span></div></a>
-      <!-- <a href="https://www.instagram.com/yasssspatel/" target="_blank" class="contact-link"><div class="contact-link-icon"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></div><div class="contact-link-label"><strong>Instagram</strong><span>@yasssspatel</span></div></a> -->
+      <a href="mailto:yashpatel.sde@gmail.com" class="contact-link"><div class="contact-link-icon"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2zm0 2l-8 5-8-5h16zm0 12H4V9l8 5 8-5v9z"/></svg></div><div class="contact-link-label"><strong>Email</strong><span>yashpatel.sde@gmail.com</span></div></a>
+      <a href="https://www.linkedin.com/in/yashpatel458/" target="_blank" class="contact-link"><div class="contact-link-icon"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M19 3H5a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2V5a2 2 0 00-2-2zm-9 14H7V9h3v8zm-1.5-9.3a1.7 1.7 0 110-3.4 1.7 1.7 0 010 3.4zM17 17h-3v-4.1c0-1 0-2.3-1.4-2.3-1.4 0-1.6 1.1-1.6 2.2V17h-3V9h2.9v1.1h.1c.4-.8 1.4-1.6 2.9-1.6 3.1 0 3.7 2 3.7 4.7V17z"/></svg></div><div class="contact-link-label"><strong>LinkedIn</strong><span>linkedin.com/in/yashpatel458</span></div></a>
+      <a href="https://github.com/yashpatel458" target="_blank" class="contact-link"><div class="contact-link-icon"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12c0 4.42 2.87 8.17 6.84 9.49.5.09.68-.22.68-.48v-1.7C6.73 19.9 6.14 17.97 6.14 17.97c-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.89 1.53 2.34 1.09 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.93 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02A9.56 9.56 0 0112 7.4c.85.004 1.71.115 2.51.337 1.909-1.294 2.747-1.017 2.747-1.017.546 1.373.202 2.386.1 2.638.64.7 1.028 1.593 1.028 2.685 0 3.83-2.337 4.675-4.565 4.923.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48A10.019 10.019 0 0022 12c0-5.52-4.48-10-10-10z"/></svg></div><div class="contact-link-label"><strong>GitHub</strong><span>github.com/yashpatel458</span></div></a>
+      <a href="https://twitter.com/yashpatel458" target="_blank" class="contact-link"><div class="contact-link-icon"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 01-1.93.07 4.28 4.28 0 004 2.98 8.521 8.521 0 01-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23z"/></svg></div><div class="contact-link-label"><strong>Twitter</strong><span>@yashpatel458</span></div></a>
     </div>
   </div>
 </section>
 
+</main>
+
 <footer>
-  <p>© 2026 Yash Patel &nbsp;·&nbsp; Canada 🇨🇦</p>
+  <p>© <span id="year">2026</span> Yash Patel &nbsp;·&nbsp; Canada 🇨🇦</p>
   <div class="footer-links">
     <a href="https://github.com/yashpatel458" target="_blank">GitHub</a>
     <a href="https://www.linkedin.com/in/yashpatel458/" target="_blank">LinkedIn</a>
@@ -585,40 +739,32 @@
   </div>
 </footer>
 
-<button class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">
-  <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 12V4M4 7l4-4 4 4"/></svg>
+<button class="scroll-top" id="scrollTop" type="button" aria-label="Back to top"
+        onclick="window.scrollTo({top:0,behavior:'smooth'})">
+  <svg viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 12V4M4 7l4-4 4 4"/></svg>
 </button>
 
 <script>
+// Honour the OS "reduce motion" setting throughout.
+const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
 // ─── THEME TOGGLE ──────────────────────────────────────────────
+// The saved preference is applied by an inline script in <head> to avoid a
+// flash of the wrong theme; this only handles the toggle itself.
 function toggleTheme() {
   const html = document.documentElement;
   const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
   html.setAttribute('data-theme', next);
-  localStorage.setItem('yp-theme', next);
+  const btn = document.querySelector('.theme-btn');
+  if (btn) btn.setAttribute('aria-checked', String(next === 'light'));
+  try { localStorage.setItem('yp-theme', next); } catch (e) { /* storage disabled */ }
 }
-// Restore saved preference
-(function() {
-  const saved = localStorage.getItem('yp-theme');
-  if (saved && saved !== document.documentElement.getAttribute('data-theme')) {
-    document.documentElement.setAttribute('data-theme', saved);
-  }
-})();
+
+// Sync the toggle's accessible state with whatever the head script applied.
+document.querySelector('.theme-btn')
+  ?.setAttribute('aria-checked', String(document.documentElement.getAttribute('data-theme') === 'light'));
 
 // ─── SCROLL REVEAL ─────────────────────────────────────────────
-const revEls = document.querySelectorAll('.reveal');
-new IntersectionObserver((entries) => {
-  entries.forEach((e, i) => {
-    if (e.isIntersecting) setTimeout(() => e.target.classList.add('visible'), i * 55);
-  });
-}, { threshold: 0.08 }).observe !== undefined &&
-new IntersectionObserver((entries) => {
-  entries.forEach((e, i) => {
-    if (e.isIntersecting) setTimeout(() => e.target.classList.add('visible'), i * 55);
-  });
-}, { threshold: 0.08 }).disconnect();
-
-// Simpler reveal
 const revObs = new IntersectionObserver((entries) => {
   entries.forEach(e => {
     if (e.isIntersecting) {
@@ -627,27 +773,128 @@ const revObs = new IntersectionObserver((entries) => {
     }
   });
 }, { threshold: 0.08 });
-revEls.forEach(el => revObs.observe(el));
+document.querySelectorAll('.reveal').forEach(el => revObs.observe(el));
 
 // ─── PROJECT FILTER ────────────────────────────────────────────
 function filterProjects(type, btn) {
-  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-  btn.classList.add('active');
-  document.querySelectorAll('.proj-card').forEach(card => {
-    card.classList.toggle('hidden', type !== 'all' && card.dataset.type !== type);
+  document.querySelectorAll('.filter-btn').forEach(b => {
+    b.classList.remove('active');
+    b.setAttribute('aria-pressed', 'false');
   });
+  btn.classList.add('active');
+  btn.setAttribute('aria-pressed', 'true');
+
+  let shown = 0;
+  document.querySelectorAll('.proj-card').forEach(card => {
+    const hide = type !== 'all' && card.dataset.type !== type;
+    card.classList.toggle('hidden', hide);
+    if (!hide) shown++;
+  });
+
+  // Filtering is a purely visual change; announce it for screen readers.
+  const status = document.getElementById('projStatus');
+  if (status) status.textContent = `Showing ${shown} project${shown === 1 ? '' : 's'}.`;
 }
 
 // ─── SCROLL TOP ────────────────────────────────────────────────
+// rAF-throttled: the raw scroll event fires far more often than we can paint.
 const stBtn = document.getElementById('scrollTop');
-window.addEventListener('scroll', () => stBtn.classList.toggle('show', scrollY > 400));
+if (stBtn) {
+  let scrollTicking = false;
+  window.addEventListener('scroll', () => {
+    if (scrollTicking) return;
+    scrollTicking = true;
+    requestAnimationFrame(() => {
+      stBtn.classList.toggle('show', window.scrollY > 400);
+      scrollTicking = false;
+    });
+  }, { passive: true });
+}
 
 // ─── HERO ENTRANCE ─────────────────────────────────────────────
 window.addEventListener('load', () => {
-  const hc = document.querySelector('.hero-content');
-  hc.style.cssText = 'opacity:0;transform:translateY(28px);transition:opacity 0.9s ease 0.25s,transform 0.9s ease 0.25s';
-  requestAnimationFrame(() => { hc.style.opacity = '1'; hc.style.transform = 'none'; });
+  const hl = document.querySelector('.hero-left');
+  if (!hl || reduceMotion.matches) return;
+  hl.style.cssText = 'opacity:0;transform:translateY(28px);transition:opacity 0.9s ease 0.25s,transform 0.9s ease 0.25s';
+  requestAnimationFrame(() => { hl.style.opacity = '1'; hl.style.transform = 'none'; });
 });
+
+// ─── HERO SPOTLIGHT ────────────────────────────────────────────
+(function() {
+  const hero = document.getElementById('hero');
+  const spot = document.getElementById('heroSpotlight');
+  if (!hero || !spot || reduceMotion.matches) return;
+
+  // rAF-throttled: writing a gradient string on every mousemove forces a
+  // style recalc per event.
+  let pending = null;
+  hero.addEventListener('mousemove', (e) => {
+    const rect = hero.getBoundingClientRect();
+    const x = ((e.clientX - rect.left) / rect.width * 100).toFixed(1);
+    const y = ((e.clientY - rect.top) / rect.height * 100).toFixed(1);
+    if (pending) return;
+    pending = requestAnimationFrame(() => {
+      spot.style.background = `radial-gradient(ellipse 700px 500px at ${x}% ${y}%, var(--accent-glow) 0%, transparent 70%)`;
+      pending = null;
+    });
+  }, { passive: true });
+})();
+
+// ─── CONTACT SPLINE BACKGROUND ─────────────────────────────────
+// Injects the robot-follows-cursor scene only when the contact section
+// approaches the viewport, and only where it makes sense: desktop widths
+// (phones have no cursor and pay the WebGL cost for nothing) and no
+// reduced-motion preference. Inert until a real scene URL is pasted in
+// the data-scene-url attribute.
+(function() {
+  const bg = document.getElementById('contactSpline');
+  if (!bg) return;
+  const sceneUrl = bg.dataset.sceneUrl || '';
+  if (!sceneUrl.endsWith('.splinecode')) return;
+  if (reduceMotion.matches || !window.matchMedia('(min-width: 960px)').matches) return;
+
+  const obs = new IntersectionObserver((entries) => {
+    if (entries.some(e => e.isIntersecting)) {
+      obs.disconnect();
+      const viewer = document.createElement('spline-viewer');
+      viewer.setAttribute('url', sceneUrl);
+      // Listen for mouse events on the window, not the canvas — the canvas
+      // is pointer-events:none so contact links stay clickable.
+      viewer.setAttribute('events-target', 'global');
+      bg.appendChild(viewer);
+    }
+  }, { rootMargin: '600px 0px' });
+  obs.observe(bg);
+})();
+
+// ─── MOBILE MENU ───────────────────────────────────────────────
+function openMenu() {
+  const menu = document.getElementById('mobileMenu');
+  const burger = document.querySelector('.hamburger');
+  menu.classList.add('open');
+  burger.setAttribute('aria-expanded', 'true');
+  document.body.style.overflow = 'hidden';
+  menu.querySelector('.mobile-close')?.focus();
+}
+
+function closeMenu() {
+  const menu = document.getElementById('mobileMenu');
+  const burger = document.querySelector('.hamburger');
+  menu.classList.remove('open');
+  burger.setAttribute('aria-expanded', 'false');
+  document.body.style.overflow = '';
+}
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && document.getElementById('mobileMenu')?.classList.contains('open')) {
+    closeMenu();
+    document.querySelector('.hamburger')?.focus();
+  }
+});
+
+// ─── FOOTER YEAR ───────────────────────────────────────────────
+const yearEl = document.getElementById('year');
+if (yearEl) yearEl.textContent = new Date().getFullYear();
 </script>
 </body>
 </html>
