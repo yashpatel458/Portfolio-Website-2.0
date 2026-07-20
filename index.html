@@ -341,7 +341,7 @@
   .ach-link { color: var(--accent2); text-decoration: underline; text-underline-offset: 3px; }
 
   /* CONTACT */
-  #contact { background: var(--bg2); position: relative; overflow: hidden; }
+  #contact { background: var(--bg); position: relative; overflow: hidden; }
   /* 3D background scene: sits behind the content, never intercepts clicks.
      The viewer uses events-target="global" so the robot still follows the
      cursor even though the canvas itself is pointer-events: none. */
@@ -354,8 +354,8 @@
      where the robot lives. */
   .contact-bg::after {
     content: ''; position: absolute; inset: 0;
-    background: linear-gradient(90deg, var(--bg2) 0%, transparent 55%),
-                linear-gradient(0deg, var(--bg2) 0%, transparent 25%);
+    background: linear-gradient(90deg, var(--bg) 0%, transparent 55%),
+                linear-gradient(0deg, var(--bg) 0%, transparent 25%);
   }
   #contact > :not(.contact-bg) { position: relative; z-index: 1; }
   .contact-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: start; }
