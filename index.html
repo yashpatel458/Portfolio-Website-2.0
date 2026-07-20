@@ -347,6 +347,9 @@
      cursor even though the canvas itself is pointer-events: none. */
   .contact-bg { position: absolute; inset: 0; z-index: 0; pointer-events: none; }
   .contact-bg spline-viewer { position: absolute; inset: 0; width: 100%; height: 100%; }
+  /* The robot scene is authored on a dark canvas; in light mode its dark
+     edges cut across the contact links, so the scene is dark-mode only. */
+  [data-theme="light"] .contact-bg { display: none; }
   /* Veil so text stays readable over the scene, fading toward the right
      where the robot lives. */
   .contact-bg::after {
@@ -405,8 +408,10 @@
     .nav-links { display: none; }
     .hamburger { display: flex; }
     #hero { flex-direction: column; }
-    .hero-left { flex: none; padding: 7rem 2rem 2rem; min-height: 55vh; justify-content: flex-end; }
-    .hero-right { flex: none; height: 45vh; }
+    /* No 3D scenes on small screens: the hero text takes the full
+       viewport and the animation container disappears entirely. */
+    .hero-left { flex: none; padding: 7rem 2rem 2rem; min-height: 100vh; justify-content: center; }
+    .hero-right { display: none; }
     .hero-divider { display: none; }
     section { padding: 5rem 2rem; }
     .about-grid, .contact-inner { grid-template-columns: 1fr; gap: 3rem; }
@@ -494,9 +499,9 @@
       <a href="https://twitter.com/yashpatel458" target="_blank">Twitter</a>
     </div>
   </div>
-  <div class="hero-right">
-    <spline-viewer url="https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode" loading="lazy"></spline-viewer>
-  </div>
+  <!-- Scene is injected by script on desktop widths only, so phones
+       never pay the download/WebGL cost. -->
+  <div class="hero-right" data-scene-url="https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode"></div>
 </section>
 
 <!-- ABOUT -->
@@ -840,31 +845,75 @@ window.addEventListener('load', () => {
   }, { passive: true });
 })();
 
+// ─── SPLINE WATERMARK ──────────────────────────────────────────
+// The viewer injects a "Built with Spline" badge into its shadow DOM
+// some time after the scene loads, so poll briefly until it appears.
+function stripSplineLogo(viewer) {
+  let tries = 0;
+  const timer = setInterval(() => {
+    const logo = viewer.shadowRoot?.querySelector('#logo');
+    if (logo) { logo.remove(); clearInterval(timer); }
+    else if (++tries > 40) clearInterval(timer);
+  }, 500);
+}
+// True when 3D scenes should run at all: desktop widths only (phones
+// pay the download/WebGL cost for nothing) and no reduced-motion pref.
+const splineAllowed = () =>
+  !reduceMotion.matches && window.matchMedia('(min-width: 960px)').matches;
+
+// ─── HERO SPLINE ───────────────────────────────────────────────
+// The hero scene is injected here rather than hard-coded in the HTML
+// so small screens never load it (the container is display:none there).
+(function() {
+  const wrap = document.querySelector('.hero-right');
+  const sceneUrl = wrap?.dataset.sceneUrl || '';
+  if (!sceneUrl.endsWith('.splinecode') || !splineAllowed()) return;
+  const viewer = document.createElement('spline-viewer');
+  viewer.setAttribute('url', sceneUrl);
+  viewer.setAttribute('loading', 'lazy');
+  wrap.appendChild(viewer);
+  stripSplineLogo(viewer);
+})();
+
 // ─── CONTACT SPLINE BACKGROUND ─────────────────────────────────
 // Injects the robot-follows-cursor scene only when the contact section
-// approaches the viewport, and only where it makes sense: desktop widths
-// (phones have no cursor and pay the WebGL cost for nothing) and no
-// reduced-motion preference. Inert until a real scene URL is pasted in
-// the data-scene-url attribute.
+// approaches the viewport, only on desktop widths, and only in dark
+// mode — the scene is authored on a dark canvas and clashes with the
+// light theme (CSS also hides it if the user toggles back to light).
+// Inert until a real scene URL is pasted in the data-scene-url attribute.
 (function() {
   const bg = document.getElementById('contactSpline');
   if (!bg) return;
   const sceneUrl = bg.dataset.sceneUrl || '';
-  if (!sceneUrl.endsWith('.splinecode')) return;
-  if (reduceMotion.matches || !window.matchMedia('(min-width: 960px)').matches) return;
+  if (!sceneUrl.endsWith('.splinecode') || !splineAllowed()) return;
+
+  const isDark = () => document.documentElement.getAttribute('data-theme') === 'dark';
+  let nearViewport = false;
+  const inject = () => {
+    if (bg.querySelector('spline-viewer')) return;
+    const viewer = document.createElement('spline-viewer');
+    viewer.setAttribute('url', sceneUrl);
+    // Listen for mouse events on the window, not the canvas — the canvas
+    // is pointer-events:none so contact links stay clickable.
+    viewer.setAttribute('events-target', 'global');
+    bg.appendChild(viewer);
+    stripSplineLogo(viewer);
+  };
 
   const obs = new IntersectionObserver((entries) => {
     if (entries.some(e => e.isIntersecting)) {
       obs.disconnect();
-      const viewer = document.createElement('spline-viewer');
-      viewer.setAttribute('url', sceneUrl);
-      // Listen for mouse events on the window, not the canvas — the canvas
-      // is pointer-events:none so contact links stay clickable.
-      viewer.setAttribute('events-target', 'global');
-      bg.appendChild(viewer);
+      nearViewport = true;
+      if (isDark()) inject();
     }
   }, { rootMargin: '600px 0px' });
   obs.observe(bg);
+
+  // If the section was reached while in light mode, load the scene the
+  // moment the user switches to dark.
+  new MutationObserver(() => {
+    if (nearViewport && isDark()) inject();
+  }).observe(document.documentElement, { attributeFilter: ['data-theme'] });
 })();
 
 // ─── MOBILE MENU ───────────────────────────────────────────────
